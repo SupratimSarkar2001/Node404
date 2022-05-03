@@ -4,7 +4,7 @@ const http= require("http");
 
 const fs=require("fs");//in order to use streming
 const server=http.createServer((req,res)=>{
- const rs=fs.ReadStream("./input.txt");
+ const rs=fs.createReadStream("./input.txt");
  rs.on("data",(chunkdata)=>{
      res.write(chunkdata);
      res.end();
